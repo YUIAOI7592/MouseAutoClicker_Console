@@ -12,7 +12,7 @@ int main()
     _setmode(_fileno(stdout), _O_U16TEXT);
     system("mode con cols=20 lines=4");
     system("title MouseAutoClicker");
-    wcout << L"左鍵連點1000Hz" << endl;
+    wcout << L"左鍵連點" << endl;
     wcout << L"Ctrl + F2 開始" << endl;
     wcout << L"Ctrl + F3 暫停" << endl;
     while (1)
@@ -21,7 +21,6 @@ int main()
             while (1)
             {
                 mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-                Sleep(1);
                 if (CheckEnd())
                     break;
             }
