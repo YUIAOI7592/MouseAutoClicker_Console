@@ -38,11 +38,9 @@ bool CheckEnd() {
     return false;
 }
 void Clicker() {
-  enum sendInputs { MOUSE_DOWN, MOUSE_UP, NUM_INPUTS };
+  enum sendInputs { MOUSE_CLICK, NUM_INPUTS };
   INPUT inputs[NUM_INPUTS];
-  inputs[MOUSE_DOWN].type = INPUT_MOUSE;
-  inputs[MOUSE_DOWN].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-  inputs[MOUSE_UP].type = INPUT_MOUSE;
-  inputs[MOUSE_UP].mi.dwFlags = MOUSEEVENTF_LEFTUP;
+  inputs[MOUSE_CLICK].type = INPUT_MOUSE;
+  inputs[MOUSE_CLICK].mi.dwFlags = MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP;
   SendInput(NUM_INPUTS, inputs, sizeof(inputs));
 }
